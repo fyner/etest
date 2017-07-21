@@ -2,13 +2,33 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
 function createWindow () {
+//koi uzkraus duomenis ir parogys puslapi
+  win = new BrowserWindow({show: false})
+  win.once('ready-to-show', () => {
+	win.show()
+})
+  
   // Create the browser window.
-  win = new BrowserWindow({width: 1000, height: 800})
+  // win = new BrowserWindow({width: 800, height: 600})
+  win = new BrowserWindow({
+	title: 'Aukmergės baldai - duomenų bazė',
+	
+	//alwaysOnTop: true,
+	//fullscreen: true,
+	//autoHideMenuBar: true, // show Alt key
+    Width: 600, 
+    Height: 400,
+	//backgroundColor: '#2e2c29', //Background color
+	//transparent: true,//transparent
+	//frame: false, //Frameless
+    icon: (__dirname, 'icon.ico')
+  })
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -50,6 +70,7 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
