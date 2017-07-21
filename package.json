@@ -1,0 +1,28 @@
+{
+  "name": "etest",
+  "productName": "etest",
+  "version": "0.1.0",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^1.4.3",
+    "electron-packager": "^8.1.0"
+  },
+  "description": "Electron testing",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fyner/etest.git"
+  },
+  "keywords": [
+    "electron",
+    "testing"
+  ],
+  "author": "Arunas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fyner/etest/issues"
+  },
+  "homepage": "https://github.com/fyner/etest#readme"
+}
