@@ -1,23 +1,43 @@
 {
   "name": "elektra",
   "version": "0.0.1",
+  "license": "MIT",
+  "description": "elektra db",
+  "author": "Aras <is.adminas@gmail.com>",
   "main": "main.js",
-  "devDependencies": {
-    "electron": "^1.4.3",
-    "electron-packager": "^8.1.0"
-  },
   "scripts": {
-    "start": "electron ."
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron .",
+	"pack": "build --dir",
+	"dist": "build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fyner/etest.git"
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
   },
-  "author": "Aras",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fyner/etest/issues"
+"electronBuilder": {
+  "build": {
+    "productName": "elektra db",
+    "appId": "database",
+    "asar": false,
+    "win": {
+      "icon": "ico/icon.ico",
+      "target": "nsis"
+    },
+    "nsis-web": {},
+    "linux": {
+      "target": "AppImage",
+      "category": "Development"
+    },
+    "mac": {
+      "target": "dmg"
+    }
   },
-  "homepage": "https://github.com/fyner/etest#readme",
-  "description": ""
+  "directories": {
+    "output": "elektra/build",
+    "app": "elektra",
+    "buildResources": "elektra/buildResources"
+  }
+}
 }
